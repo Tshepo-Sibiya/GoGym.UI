@@ -3,3 +3,11 @@
         margin-bottom: 20px;
     }
 }
+
+.btn i {
+    vertical-align: middle; /* Ensures the icon is aligned with the text */
+}
+.btn {
+    display: flex;
+    align-items: center; /* Aligns the icon and text vertically in the center */
+}

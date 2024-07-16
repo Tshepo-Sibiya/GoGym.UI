@@ -1,0 +1,33 @@
+.round-shape {
+    width: 200px;
+    height: 200px;
+    background-color: #eaeef1;
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    margin: 50px auto;
+}
+
+.user-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Center icon vertically */
+}
+
+.user-icon {
+    font-size: 90px; /* Size of the user icon */
+    color: #b7c0ca;  /* Icon color */
+}
+
+@media (max-width: 767.98px) {
+    .mobile-margin-bottom {
+        margin-bottom: 20px;
+    }
+    .mobile-margin-top {
+        margin-top: 20px;
+    }
+}

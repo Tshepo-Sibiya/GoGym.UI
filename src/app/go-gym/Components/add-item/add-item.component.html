@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-3"><app-manu-items></app-manu-items></div>
+        <!-- Right Column -->
+        <div class="col-md-6">
+            <div class="card p-3">
+                <form style="padding: 30px">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>
+                                Create New Item
+                            </h4>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="Name">Name*</label>
+                            <input type="text" class="form-control" id="Name" placeholder="Name">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="Description">Description</label>
+                            <textarea class="form-control" id="Description" rows="4" placeholder="Description"></textarea>
+                        </div>
+                    </div>
+                    <br><br>
+                    <button type="submit" class="btn btn-primary" style="background-color: #0A2540;">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <app-profile-card></app-profile-card>
+        </div>
+    </div>
+</div>
