@@ -12,6 +12,6 @@ export class AppComponent {
   Logout() {
     console.log("HELLO");
     // Navigate to the target component
-    this.router.navigate(['/user/dashboard']);
+    this.router.navigate(['/dashboard']);
   }
 }

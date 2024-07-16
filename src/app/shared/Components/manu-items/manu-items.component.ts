@@ -14,7 +14,7 @@ export class ManuItemsComponent implements OnInit {
   }
 
   navigate(val: string) {
-    this.router.navigate(['/user/' + val]);
+    this.router.navigate(['/' + val]);
   }
 
 }
