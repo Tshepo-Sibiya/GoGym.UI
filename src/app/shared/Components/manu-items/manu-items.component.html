@@ -1,39 +1,45 @@
-<div class="card p-3 mobile-margin-bottom">
-    <ul class="list-unstyled">
-        <li>
-            <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/user/dashboard')">
-                <i class="bi bi-house me-2"></i>Home
-            </button>
-        </li>
-        <!-- <li>
-            <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/gym-items')">
-                <i class="bi bi-box me-2"></i>Gym Items
-            </button>
-        </li> -->
-        <li>
-            <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/hit-the-gym')">
-                <i class="bi bi-send-plus me-2"></i>Hit The Gym
-            </button>
-        </li>
-        <li>
-            <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/gym-items')">
-                <i class="bi bi-card-list me-2"></i>My Gym Items
-            </button>
-        </li>
-        <li>
-            <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/add-item')">
-                <i class="bi bi-plus-circle me-2"></i>New Item
-            </button>
-        </li>
-        <li>
-            <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/user/profile')">
-                <i class="bi bi-person me-2"></i>Profile
-            </button>
-        </li>
-        <li>
-            <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/track')">
-                <i class="bi bi-bar-chart me-2"></i>Track
-            </button>
-        </li>
-    </ul>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card p-3 mobile-margin-bottom">
+            <ul class="list-unstyled">
+                <li>
+                    <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/user/dashboard')">
+                        <i class="bi bi-house me-2"></i>Home
+                    </button>
+                </li>
+                <!-- <li>
+                    <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/gym-items')">
+                        <i class="bi bi-box me-2"></i>Gym Items
+                    </button>
+                </li> -->
+                <li>
+                    <button type="button" class="btn btn-light w-100 mb-2" (click)="openDialog()">
+                        <i class="bi bi-send-plus me-2"></i>Hit The Gym
+                    </button>
+                    
+                </li>
+                <li>
+                    <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/gym-items')">
+                        <i class="bi bi-card-list me-2"></i>My Gym Items
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/add-item')">
+                        <i class="bi bi-plus-circle me-2"></i>New Item
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/user/profile')">
+                        <i class="bi bi-person me-2"></i>Profile
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-light w-100 mb-2" (click)="navigate('/go-gym/track')">
+                        <i class="bi bi-bar-chart me-2"></i>Track
+                    </button>
+                </li>
+            </ul>
+          <small style="color: gray">July Gym Visits: 55</small>
+        </div>
+    </div>
 </div>

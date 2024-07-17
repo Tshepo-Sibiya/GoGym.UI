@@ -11,3 +11,4 @@
     display: flex;
     align-items: center; /* Aligns the icon and text vertically in the center */
 }
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';

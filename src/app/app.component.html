@@ -27,6 +27,21 @@
         </div>
     </nav>
     <div class="container mt-3 body">
-        <router-outlet></router-outlet>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <div class="card p-3">
+                    <button type="button" class="btn btn-light w-100 mb-2" (click)="goGym('/go-gym/hit-the-gym')">
+                        <i class="bi bi-send-plus me-2"></i>Hit The Gym
+                    </button>
+                </div>
+            </div>
+        </div> -->
+      
+        <div class="row"> 
+            <div class="col-md-12">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+      
     </div>
 </div>
