@@ -10,19 +10,23 @@ import { UserDetails } from './user/Models/user.details';
 })
 export class AppComponent {
   title = 'Worker.Global.UI';
-  constructor(private router: Router,private dialogService: SharedDialogServiceService) { }
-
   ProfileName: String = '';
+  constructor(private router: Router,private dialogService: SharedDialogServiceService) { 
+   
+  }
+
+
 
   ngOnInit(): void {
     const userDetails = JSON.parse(sessionStorage.getItem('UserDetails') ?? '') as UserDetails;
-    this.ProfileName = userDetails.title + ' ' + userDetails.firstName
+    this.ProfileName = userDetails.title + ' ' + userDetails.firstName;
   }
   
   Logout() {
-    console.log("HELLO");
-    // Navigate to the target component
-    this.router.navigate(['/dashboard']);
+
+    sessionStorage.clear();
+    this.router.navigate(['/user/login']);
+
   }
 
   goGym(val: string){}

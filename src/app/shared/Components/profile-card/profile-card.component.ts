@@ -8,12 +8,16 @@ import { UserDetails } from 'src/app/user/Models/user.details';
 })
 export class ProfileCardComponent implements OnInit {
 
-  constructor() { }
   ProfileName: String = '';
+  constructor() {
+
+
+   }
+
 
   ngOnInit(): void {
     const userDetails = JSON.parse(sessionStorage.getItem('UserDetails') ?? '') as UserDetails;
-    this.ProfileName = userDetails.title + ' ' + userDetails.firstName
+    this.ProfileName = userDetails.title + ' ' + userDetails.firstName;
   }
 
 }
