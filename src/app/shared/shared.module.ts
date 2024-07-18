@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SharedDialogServiceService } from './Service/shared-dialog-service.service';
 import { MatCommonModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StorageService } from './Service/storage.service';
 
 
 
@@ -27,13 +28,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCommonModule,
     ReactiveFormsModule
   ],
-  providers: [SharedDialogServiceService],
+  providers: [
+    SharedDialogServiceService,
+    StorageService
+  ],
   exports: [
     ManuItemsComponent,
     ProfileCardComponent,
     SharedDialogComponent
 
-  ], 
+  ],
   entryComponents: [SharedDialogComponent]
 })
 export class SharedModule { }

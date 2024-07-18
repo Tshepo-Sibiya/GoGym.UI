@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedDialogServiceService } from './shared/Service/shared-dialog-service.service';
 import { UserDetails } from './user/Models/user.details';
+import { StorageService } from './shared/Service/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -11,25 +12,24 @@ import { UserDetails } from './user/Models/user.details';
 export class AppComponent {
   title = 'Worker.Global.UI';
   ProfileName: String = '';
-  constructor(private router: Router,private dialogService: SharedDialogServiceService) { 
-   
+  userDetails!: UserDetails;
+  constructor(private router: Router, private dialogService: SharedDialogServiceService, private storageService: StorageService) {
+
   }
-
-
 
   ngOnInit(): void {
-    const userDetails = JSON.parse(sessionStorage.getItem('UserDetails') ?? '') as UserDetails;
-    this.ProfileName = userDetails.title + ' ' + userDetails.firstName;
+    this.userDetails = (this.storageService.getItem<string>('UserDetails') as UserDetails);
+    this.ProfileName = this.userDetails.title + ' ' + this.userDetails.firstName;
   }
-  
+
   Logout() {
 
-    sessionStorage.clear();
+    this.storageService.clearSessionStorage();
     this.router.navigate(['/user/login']);
 
   }
 
-  goGym(val: string){}
+  goGym(val: string) { }
 
 
   openDialog(): void {
@@ -41,5 +41,5 @@ export class AppComponent {
     // });
   }
 
-  
+
 }
