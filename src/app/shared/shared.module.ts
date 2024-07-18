@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedDialogServiceService } from './Service/shared-dialog-service.service';
 import { MatCommonModule } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +24,8 @@ import { MatCommonModule } from '@angular/material/core';
     SharedRoutingModule,
     MatDialogModule,
     MatButtonModule,
-    MatCommonModule
+    MatCommonModule,
+    ReactiveFormsModule
   ],
   providers: [SharedDialogServiceService],
   exports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDetails } from 'src/app/user/Models/user.details';
 
 @Component({
   selector: 'app-profile-card',
@@ -8,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileCardComponent implements OnInit {
 
   constructor() { }
+  ProfileName: String = '';
 
   ngOnInit(): void {
+    const userDetails = JSON.parse(sessionStorage.getItem('UserDetails') ?? '') as UserDetails;
+    this.ProfileName = userDetails.title + ' ' + userDetails.firstName
   }
 
 }
