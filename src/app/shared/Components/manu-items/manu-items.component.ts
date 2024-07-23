@@ -10,7 +10,7 @@ import { SharedDialogServiceService } from '../../Service/shared-dialog-service.
 })
 export class ManuItemsComponent implements OnInit {
 
-  constructor(private router: Router, public dialog: MatDialog, private dialogService: SharedDialogServiceService) { }
+  constructor(private router: Router, private dialogService: SharedDialogServiceService) { }
 
   ngOnInit(): void {
   }

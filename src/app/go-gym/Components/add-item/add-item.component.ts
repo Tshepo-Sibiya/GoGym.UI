@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedDialogServiceService } from 'src/app/shared/Service/shared-dialog-service.service';
 
 @Component({
   selector: 'app-add-item',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogService: SharedDialogServiceService) { }
 
   ngOnInit(): void {
+  }
+
+  infoDialog(): void {
+    const dialogData = {
+      message: 'This is a simple dialog!'
+    };
+    this.dialogService.openDialog(dialogData);
   }
 
 }

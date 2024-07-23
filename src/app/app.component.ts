@@ -18,8 +18,8 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.userDetails = (this.storageService.getItem<string>('UserDetails') as UserDetails);
-    this.ProfileName = this.userDetails.title + ' ' + this.userDetails.firstName;
+    // this.userDetails = (this.storageService.getItem<string>('UserDetails') as UserDetails);
+    // this.ProfileName = this.userDetails.title + ' ' + this.userDetails.firstName;
   }
 
   Logout() {

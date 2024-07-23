@@ -12,8 +12,8 @@ export class ProfileCardComponent implements OnInit {
   ProfileName: String = '';
   constructor(private storageService: StorageService) {
 
-    const userDetails = (this.storageService.getItem<string>('UserDetails') as UserDetails);
-    this.ProfileName = userDetails.title + ' ' + userDetails.firstName;
+    // const userDetails = (this.storageService.getItem<string>('UserDetails') as UserDetails);
+    // this.ProfileName = userDetails.title + ' ' + userDetails.firstName;
    }
 
 
