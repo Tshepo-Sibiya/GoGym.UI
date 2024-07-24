@@ -6,6 +6,7 @@ import { GymItemsComponent } from './Components/gym-items/gym-items.component';
 import { HitTheGymComponent } from './Components/hit-the-gym/hit-the-gym.component';
 import { TrackComponent } from './Components/track/track.component';
 import { GoGymRoutingModule } from './go-gym-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,9 @@ import { GoGymRoutingModule } from './go-gym-routing.module';
   imports: [
     CommonModule,
     GoGymRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class GoGymModule { }

@@ -1,52 +1,72 @@
-<div class="container mt-5">
-    <div class="row">
-        <!-- Left Column -->
-        <div class="col-md-3">
-            <app-manu-items></app-manu-items>
-        </div>
-        <!-- Right Column -->
-        <div class="col-md-6">
-            <div class="card p-3">
-                <div class="row">
-                    <div class="col-md-12" style="padding: 20px">
 
-                        <div>
-                            <h1 style="font-weight: bolder;">My Gym Items &nbsp; <i class="bi bi-plus-circle me-2" (click)="navigate('/go-gym/add-item')"></i></h1>
-                            <hr>
-                        </div>
-             
-                        <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
-                            <table class="table">
+<form [formGroup]="gymItemsForm">
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-3">
+                <app-manu-items></app-manu-items>
+            </div>
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <div class="row">
+                        <div class="col-md-12" style="padding: 20px">
+    
+                            <div>
+                                <h1 style="font-weight: bolder;">My Gym Items &nbsp; <i class="bi bi-plus-circle me-2" (click)="navigate('/go-gym/add-item')"></i></h1>
+                                <hr>
+                            </div>
+                 
+                            <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+                                <table class="table">
+    
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"> <input class="form-check-input" type="checkbox" formControlName="selectAll"/></th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Required</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody formArrayName="items">
+                                        <tr *ngFor="let control of itemControls; let i = index">
+                                            <td>
+                                              <input type="checkbox" [formControl]="control">
+                                            </td>
+                                            <td>
+                                              {{ gymItems[i].name }} <!-- Adjust the property name as per your item object structure -->
+                                            </td>
 
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Required</th>
-                                        <th scope="col">Edit</th>
-                                        <th scope="col">Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of gymItems">
-                                        <td>{{item.name}}</td>
-                                        <td>{{getRequiredValue(item.isRequired)}}</td>
-                                        <td>
-                                            <i class="bi bi-pencil-square me-2" style="color: green;"></i>
-                                        </td>
-                                        <td style="color: rgb(5, 20, 54);">
-                                            <i class="bi bi-trash me-2" (click)="openConfirmDialog(item.gymItemId)"></i>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                            <td>{{getRequiredValue(gymItems[i].isRequired)}}</td>
+                                            <td>
+                                                <i class="bi bi-pencil-square me-2" style="color: green;"></i>
+                                            </td>
+                                            <td style="color: rgb(5, 20, 54);">
+                                                <i class="bi bi-trash me-2" (click)="openConfirmDialog(gymItems[i].gymItemId)"></i>
+                                            </td>
+
+                                          </tr>
+                                        <!-- <tr>
+                                            <td colspan="5">
+                                                <button mat-button color="warn" (click)="deleteSelected()">Delete selected items</button>
+                                            </td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style="padding-top: 0.9em">
+                                <button type="submit" class="btn btn-primary" style="background-color: #0A2540;" (click)="openConfirmDialog('')">Delete Selected</button>
+                            </div>
+                        
                         </div>
                     </div>
+                    <br>
                 </div>
-                <br>
+            </div>
+            <div class="col-md-3">
+                <app-profile-card></app-profile-card>
             </div>
         </div>
-        <div class="col-md-3">
-            <app-profile-card></app-profile-card>
-        </div>
     </div>
-</div>
+</form>
