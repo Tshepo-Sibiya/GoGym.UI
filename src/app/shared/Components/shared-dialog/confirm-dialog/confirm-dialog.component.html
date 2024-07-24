@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <p *ngIf="!isLoading" style="text-align: center;">{{ message }}</p>
+  <p *ngIf="isLoading">Please wait...</p>
+</div>
+<div mat-dialog-actions *ngIf="!isLoading">
+  <button mat-button color="primary"  (click)="onCancel()" *ngIf="isComplete">Close</button>
+  <button mat-button color="primary"  (click)="onCancel()" *ngIf="!isComplete">Cancel</button>
+  <button mat-button color="warn" (click)="onConfirm()" *ngIf="!isComplete">Confirm</button>
+</div>

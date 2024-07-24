@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ManuItemsComponent } from './Components/manu-items/manu-items.component';
 import { ProfileCardComponent } from './Components/profile-card/profile-card.component';
 import { SharedRoutingModule } from './shared-routing.module';
-import { SharedDialogComponent } from './Components/shared-dialog/shared-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedDialogServiceService } from './Service/shared-dialog-service.service';
 import { MatCommonModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StorageService } from './Service/storage.service';
+import { ConfirmDialogComponent } from './Components/shared-dialog/confirm-dialog/confirm-dialog.component';
+import { SharedDialogComponent } from './Components/shared-dialog/shared-dialog.component';
 
 
 
@@ -18,7 +19,8 @@ import { StorageService } from './Service/storage.service';
   declarations: [
     ManuItemsComponent,
     ProfileCardComponent,
-    SharedDialogComponent
+    SharedDialogComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
