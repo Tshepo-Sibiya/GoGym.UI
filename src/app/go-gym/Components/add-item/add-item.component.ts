@@ -89,4 +89,16 @@ export class AddItemComponent implements OnInit {
     // });
   }
 
+  info() {
+    const dialogRef = this.dialog.open(MessageDialogComponent, {
+      width: '300px',
+      data: {
+
+        title: 'Information',
+        message: 'This flag that shows whether an item is required or not.'
+      }
+    });
+
+  }
+
 }
