@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { GymItemsService } from '../../Services/gym-items.service';
 import { GymItem } from '../../models/gymItem';
 import { MatDialog } from '@angular/material/dialog';
-import { API_ENDPOINTS } from '../../Constants/api-endpoints';
+import { GYM_API_ENDPOINTS } from '../../Constants/api-endpoints';
 import { ConfirmDialogComponent } from 'src/app/shared/Components/shared-dialog/confirm-dialog/confirm-dialog.component';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -111,7 +111,7 @@ export class GymItemsComponent implements OnInit {
       data: {
         title: 'Delete Item',
         message: 'Are you sure you want to delete this item?',
-        apiEndpoint: API_ENDPOINTS.DELETE_GYM_ITEM,
+        apiEndpoint: GYM_API_ENDPOINTS.DELETE_GYM_ITEM,
         id: id   // Example payload
       }
     });

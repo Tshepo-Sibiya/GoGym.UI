@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StorageService } from './Service/storage.service';
 import { ConfirmDialogComponent } from './Components/shared-dialog/confirm-dialog/confirm-dialog.component';
 import { SharedDialogComponent } from './Components/shared-dialog/shared-dialog.component';
+import { MessageDialogComponent } from './Components/shared-dialog/message-dialog/message-dialog.component';
 
 
 
@@ -20,7 +21,8 @@ import { SharedDialogComponent } from './Components/shared-dialog/shared-dialog.
     ManuItemsComponent,
     ProfileCardComponent,
     SharedDialogComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    MessageDialogComponent
   ],
   imports: [
     CommonModule,
