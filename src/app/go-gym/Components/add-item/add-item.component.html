@@ -6,12 +6,11 @@
         <div class="col-md-6">
             <div class="card p-3">
                 <form style="padding: 20px" [formGroup]="addItemForm">
-                    <div class="row mb-3">
-                        <div class="col-md-12">
-                            <h1 style="font-weight: bolder;">Create New Gym Item</h1>
-                            <hr>
-                        </div>
+                    <div style="padding:20px; margin-bottom: 20px; background-color: #f8f9fa;">
+                        <h1 style="font-weight: bolder;">Create New Gym Item</h1>
+                        <hr>
                     </div>
+
                     <!-- <div class="spinner-border"></div>
                     <div class="row" *ngIf="isLoading">
                         <div class="col-12">
@@ -19,17 +18,19 @@
                         </div>
                     </div> -->
 
-                    <div style="padding:20px; background-color: #f8f9fa;"> 
+                    <div style="padding:20px; background-color: #f8f9fa;">
                         <div class="row mb-3">
                             <div class="form-group col-md-12">
                                 <label for="Name">Name*</label>
-                                <input type="text" class="form-control" id="Name" placeholder="Gym Item Name" formControlName="name">
+                                <input type="text" class="form-control" id="Name" placeholder="Gym Item Name"
+                                    formControlName="name">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="form-group col-md-12">
                                 <label for="Description">Description</label>
-                                <textarea class="form-control" id="Description" rows="4" placeholder="Description" formControlName="description"></textarea>
+                                <textarea class="form-control" id="Description" rows="4" placeholder="Description"
+                                    formControlName="description"></textarea>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -37,20 +38,23 @@
                                 <small class="form-check-label" for="defaultCheck1" (click)="info()">
                                     Is Required &nbsp;<i class="bi bi-info-circle me-2"></i>
                                 </small> &nbsp;
-                                <input class="form-check-input" type="checkbox" id="defaultCheck1" formControlName="isRequired"/>
+                                <input class="form-check-input" type="checkbox" id="defaultCheck1"
+                                    formControlName="isRequired" />
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-12">
-                                <button type="submit" (click)="submit()" class="btn btn-primary" style="background-color: #0A2540;" [disabled]="isLoading">
+                                <button type="submit" (click)="submit()" class="btn btn-primary"
+                                    style="background-color: #0A2540;" [disabled]="isLoading">
                                     <span *ngIf="!isLoading">Submit</span>
-                                    <span *ngIf="isLoading"><span class="spinner-grow spinner-grow-sm"></span> &nbsp;Please wait...</span>
+                                    <span *ngIf="isLoading"><span class="spinner-grow spinner-grow-sm"></span>
+                                        &nbsp;Please wait...</span>
                                 </button>
                             </div>
                         </div>
                     </div>
-              
-                 
+
+
                 </form>
             </div>
         </div>
