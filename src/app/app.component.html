@@ -9,9 +9,9 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
 
-                    <a class="nav-link">
-                        <label for="" style="color: white">Welcome back {{ProfileName}}</label> &nbsp;
-                        <i class="fas fa-power-off" (click)="Logout()"></i>
+                    <a class="nav-link" >
+                        <label for="" style="color: white"><span style="font-weight: bold;">{{greetingMessage}}</span> &nbsp;<span *ngIf="isAuthenticated">{{ProfileName}}</span></label> &nbsp;
+                        <i *ngIf="isAuthenticated" class="fas fa-power-off" (click)="Logout()"></i>
                     </a>
                 </li>
                 <!-- <li class="nav-item">
