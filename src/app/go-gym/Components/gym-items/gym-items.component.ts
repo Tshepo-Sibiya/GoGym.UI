@@ -79,7 +79,8 @@ export class GymItemsComponent implements OnInit {
   initializeCheckboxes() {
     const formArray = this.gymItemsForm.get('items') as FormArray;
     formArray.clear(); // Clear existing checkboxes
-    this.gymItems.forEach(() => formArray.push(new FormControl(false)));
+    this.gymItems.forEach((item) => formArray.push(this.createItem(item)));
+    console.log(formArray);
   }
 
 
@@ -90,7 +91,32 @@ export class GymItemsComponent implements OnInit {
 
   setAllCheckboxes(value: boolean) {
     const formArray = this.gymItemsForm.get('items') as FormArray;
-    formArray.controls.forEach(control => control.setValue(value));
+  
+    formArray.controls.forEach(control => {
+      // Ensure that each control is a FormGroup
+      if (control instanceof FormGroup) {
+        // Set the value for each FormControl in the FormGroup
+        Object.keys(control.controls).forEach(key => {
+          const formControl = control.get(key);
+          if (formControl) {
+            formControl.setValue(value);
+          }
+        });
+      }
+    });
+  }
+  
+  getSelectedItems() {
+    // let _selectedItems = this.itemControls
+    //   .filter(control => control.value == true)
+    //   .map(control => control.value);
+
+    //   return _selectedItems;
+
+      const formArray = this.gymItemsForm.get('items') as FormArray;
+      return formArray.controls
+        .filter(control => (control.get('isRequired') as FormControl).value)
+        .map(control => control.value);
   }
 
   updateSelectAllCheckbox() {
@@ -104,8 +130,21 @@ export class GymItemsComponent implements OnInit {
     return formArray.controls as FormControl[];
   }
 
-  deleteSelected() { }
+  createItem(gymItem: GymItem): FormGroup {
+    return this.fb.group({
+      name: [gymItem.name],
+      gymItemId: [gymItem.gymItemId],
+      isRequired: [gymItem.isRequired]
+    });
+  }
+
+  // deleteSelected() { 
+  //   let _selected = this.getSelectedItems();
+  //   console.log(_selected);
+  // }
   openConfirmDialog(id: any) {
+    let _selected = this.getSelectedItems();
+    console.log(_selected);
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '300px',
       data: {

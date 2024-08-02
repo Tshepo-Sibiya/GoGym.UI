@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from '../user/Components/dashboard/dashboard.component';
+import { AuthGuard } from './Guards/auth.guard';
 
 
 const routes: Routes = [
     {
         path: '',
         component: DashboardComponent,
+        canActivate: [AuthGuard],
         pathMatch: 'full'
       },
       {
@@ -17,7 +19,7 @@ const routes: Routes = [
       },
       {
         path: 'go-gym',
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         loadChildren: () => import('../go-gym/go-gym.module').then(b => b.GoGymModule),
         
       },
