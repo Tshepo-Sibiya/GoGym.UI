@@ -4,6 +4,7 @@ import { AddItemComponent } from './Components/add-item/add-item.component';
 import { GymItemsComponent } from './Components/gym-items/gym-items.component';
 import { HitTheGymComponent } from './Components/hit-the-gym/hit-the-gym.component';
 import { TrackComponent } from './Components/track/track.component';
+import { ItemDetailsComponent } from './Components/item-details/item-details.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
     {
         path: 'track',
         component: TrackComponent
+    },
+    {
+        path: 'item-details',
+        component: ItemDetailsComponent
     }
 
 

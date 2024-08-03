@@ -53,7 +53,7 @@
                                                 {{ getRequiredValue(gymItems[i].isRequired) }}
                                               </td>
                                               <td>
-                                                <i class="bi bi-pencil-square me-2" style="color: green;"></i>
+                                                <i class="bi bi-pencil-square me-2" (click)="viewDetails(gymItems[i])" style="color: green;"></i>
                                               </td>
                                               <td style="color: rgb(5, 20, 54);">
                                                 <i class="bi bi-trash me-2" (click)="openConfirmDialog(gymItems[i].gymItemId)"></i>

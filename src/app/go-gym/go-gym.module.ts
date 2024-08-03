@@ -7,6 +7,7 @@ import { HitTheGymComponent } from './Components/hit-the-gym/hit-the-gym.compone
 import { TrackComponent } from './Components/track/track.component';
 import { GoGymRoutingModule } from './go-gym-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ItemDetailsComponent } from './Components/item-details/item-details.component';
 
 
 
@@ -15,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddItemComponent,
     GymItemsComponent,
     HitTheGymComponent, 
-    TrackComponent
+    TrackComponent, ItemDetailsComponent
   ],
   imports: [
     CommonModule,

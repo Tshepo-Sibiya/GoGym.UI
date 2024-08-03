@@ -42,6 +42,10 @@ export class GymItemsComponent implements OnInit {
     });
   }
 
+  viewDetails(itemDetails: GymItem){
+    this.router.navigate(['/go-gym/item-details'], { state: { itemDetails } });
+  }
+
   _getGymItems() {
 
     this.isLoading = true;
